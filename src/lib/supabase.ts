@@ -4,6 +4,7 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
 export const hasSupabaseConfig = Boolean(supabaseUrl && supabaseAnonKey)
+export const isDemoMode = !hasSupabaseConfig
 
 // The browser client only ever receives the public anon key. Never put a service
 // role key in Vite environment variables or ship it to the browser.
