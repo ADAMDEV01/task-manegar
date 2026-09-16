@@ -24,6 +24,18 @@ VITE_SUPABASE_ANON_KEY=your-anon-key
 
 Never add a Supabase service role key to `.env`, frontend source, or client bundles. Row-level security policies ensure each signed-in user can only access their own records.
 
+### Vercel deployment
+
+Add these two variables in **Project Settings → Environment Variables** for the
+environments you deploy:
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+
+After saving them, redeploy the project. The included `vercel.json` routes
+client-side paths such as `/login` and `/app/tasks` back to the Vite entry
+point, preventing 404 errors when those URLs are opened directly.
+
 ## Commands
 
 - `npm run dev` — local development server
